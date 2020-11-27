@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CheckoutApp.Model
 {
-    public class PriceEngine
+    public class PriceEngine : IPriceEngine
     {
         public decimal CalculateBasketPrice(List<Item> items)
         {
