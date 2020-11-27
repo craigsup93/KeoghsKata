@@ -10,7 +10,7 @@ namespace CheckoutAppTests
         public void TestAddToBasketCorrect()
         {
             var basket = Basket.Instance();
-            var itemToAdd = new Item() { Name = "TestItem", Price = 10 };
+            var itemToAdd = new Item("A", 10, 0, null);
             basket.AddItem(itemToAdd);
 
             Assert.IsTrue(basket.Contains(itemToAdd));
@@ -20,10 +20,10 @@ namespace CheckoutAppTests
         public void TestAddToBasketWrong()
         {
             var basket = Basket.Instance();
-            var itemToAdd = new Item() { Name = "TestItem", Price = 10 };
+            var itemToAdd = new Item("A", 10, 0, null);
             basket.AddItem(itemToAdd);
 
-            var wrongItemToCheck = new Item() { Name = "TestItem2", Price = 10 };
+            var wrongItemToCheck = new Item("B", 10, 0, null);
 
             Assert.IsFalse(basket.Contains(wrongItemToCheck));
         }
@@ -32,10 +32,28 @@ namespace CheckoutAppTests
         public void TestPriceCalculationOfBasket()
         {
             var basket = Basket.Instance();
-            var itemToAdd = new Item() { Name = "TestItem", Price = 10 };
-            basket.AddItem(itemToAdd);
+            var itemToAdd = new Item("A", 10, 0, null);
+            var itemToAdd2 = new Item("B", 15, 0, null);
 
-            Assert.AreEqual(10, basket.CalculatePrice());
+            basket.AddItem(itemToAdd);
+            basket.AddItem(itemToAdd2);
+
+            Assert.AreEqual(25, basket.CalculatePrice());
+        }
+
+        [TestMethod]
+        public void TestMultipleDiscountOfBasket()
+        {
+            var basket = Basket.Instance();
+            var itemToAdd = new Item("B", 15, 0, null);
+            var itemToAdd2 = new Item("B", 15, 0, null);
+            var itemToAdd3 = new Item("B", 15, 0, null);
+
+            basket.AddItem(itemToAdd);
+            basket.AddItem(itemToAdd2);
+            basket.AddItem(itemToAdd3);
+
+            Assert.AreEqual(40, basket.CalculatePrice());
         }
     }
 }

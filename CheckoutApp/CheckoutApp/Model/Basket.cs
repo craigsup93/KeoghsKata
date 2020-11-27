@@ -29,6 +29,14 @@ namespace CheckoutApp.Model
             _items.Add(item);
         }
 
+        public void AddItem(Item item, int quantity)
+        {
+            for(var i = 0; i < quantity; i++)
+            {
+                _items.Add(new Item(item.SKU, item.Price, item.DiscountPercent, item.MultipleDiscounts));
+            }
+        }
+
         public void DeleteItem(Item item)
         {
             _items.Remove(item);
@@ -41,7 +49,14 @@ namespace CheckoutApp.Model
 
         public decimal CalculatePrice()
         {
-            return 0;
+            decimal total = 0;
+
+            foreach (var item in _items)
+            {
+                total += item.Price;
+            }
+
+            return total;
         }
     }
 }
