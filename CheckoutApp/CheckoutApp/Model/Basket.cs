@@ -38,5 +38,10 @@ namespace CheckoutApp.Model
         {
             return _items.Contains(item);
         }
+
+        public decimal CalculatePrice()
+        {
+            return 0;
+        }
     }
 }

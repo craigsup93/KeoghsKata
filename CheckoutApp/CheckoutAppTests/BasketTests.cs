@@ -27,5 +27,15 @@ namespace CheckoutAppTests
 
             Assert.IsFalse(basket.Contains(wrongItemToCheck));
         }
+
+        [TestMethod]
+        public void TestPriceCalculationOfBasket()
+        {
+            var basket = Basket.Instance();
+            var itemToAdd = new Item() { Name = "TestItem", Price = 10 };
+            basket.AddItem(itemToAdd);
+
+            Assert.AreEqual(10, basket.CalculatePrice());
+        }
     }
 }
