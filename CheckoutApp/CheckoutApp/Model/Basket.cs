@@ -33,7 +33,7 @@ namespace CheckoutApp.Model
         {
             for(var i = 0; i < quantity; i++)
             {
-                _items.Add(new Item(item.SKU, item.Price, item.MultipleDiscounts));
+                _items.Add(new Item(item.SKU, item.Price, item.Discount));
             }
         }
 
@@ -49,20 +49,8 @@ namespace CheckoutApp.Model
 
         public decimal CalculatePrice()
         {
-            decimal total = 0;
-            var discountToBeApplied = false;
-
-            foreach (var item in _items)
-            {
-                if (item.MultipleDiscounts != null)
-                {
-                    discountToBeApplied = true;
-                }
-
-                total += item.Price;
-            }
-
-            return total;
+            var priceEngine = new PriceEngine();
+            return priceEngine.CalculateBasketPrice(_items);
         }
     }
 }

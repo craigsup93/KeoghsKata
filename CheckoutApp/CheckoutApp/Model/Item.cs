@@ -6,13 +6,13 @@ namespace CheckoutApp.Model
     {
         public string SKU { get; set; }
         public decimal Price { get; set; }
-        public KeyValuePair<decimal, int>? MultipleDiscounts { get; set; }
+        public string Discount { get; set; }
 
-        public Item(string sku, decimal price, KeyValuePair<decimal, int>? multipleDiscounts)
+        public Item(string sku, decimal price, string discount)
         {
             SKU = sku;
             Price = price;
-            MultipleDiscounts = multipleDiscounts;
+            Discount = discount;
         }
     }
 }

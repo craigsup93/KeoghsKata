@@ -45,9 +45,9 @@ namespace CheckoutAppTests
         public void TestMultipleDiscountOfBasket()
         {
             var basket = Basket.Instance();
-            var itemToAdd = new Item("B", 15, null);
-            var itemToAdd2 = new Item("B", 15, null);
-            var itemToAdd3 = new Item("B", 15, null);
+            var itemToAdd = new Item("B", 15, "3 for 40");
+            var itemToAdd2 = new Item("B", 15, "3 for 40");
+            var itemToAdd3 = new Item("B", 15, "3 for 40");
 
             basket.AddItem(itemToAdd);
             basket.AddItem(itemToAdd2);
