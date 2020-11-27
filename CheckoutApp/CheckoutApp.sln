@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30621.155
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckoutApp", "CheckoutApp\CheckoutApp.csproj", "{E5CB5505-FDA5-4EAE-9A00-730A645AF7D7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckoutAppTests", "CheckoutAppTests\CheckoutAppTests.csproj", "{B1A3D6F5-9B0C-4E83-94DF-9242F93DE2A2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E5CB5505-FDA5-4EAE-9A00-730A645AF7D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5CB5505-FDA5-4EAE-9A00-730A645AF7D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5CB5505-FDA5-4EAE-9A00-730A645AF7D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5CB5505-FDA5-4EAE-9A00-730A645AF7D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1A3D6F5-9B0C-4E83-94DF-9242F93DE2A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1A3D6F5-9B0C-4E83-94DF-9242F93DE2A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1A3D6F5-9B0C-4E83-94DF-9242F93DE2A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1A3D6F5-9B0C-4E83-94DF-9242F93DE2A2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {353B89E9-3707-43A3-8E04-916A36185E13}
+	EndGlobalSection
+EndGlobal
